@@ -39,6 +39,24 @@ var writers = [
   },
 ];
 
+   function presentation(){
+    const nombres = writers.map((nombre) => {
+      return nombre.firstName;
+    });
+  
+  writers.forEach((apellido) => {
+    console.log( apellido.lastName)
+    
+   });
+  
+   console.log(`Hi my name is ${nombres} `)
+}
+presentation();
+  
+
+
+// console.log(`Hi, my name is ${writers[0].firstName} ${writers[0].lastName}. I am ${writers.age} years old, and work as a ${writers.occupation}.`)
+
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */

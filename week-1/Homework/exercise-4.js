@@ -47,7 +47,7 @@ let restaurant1 = {
     menu: ["stew", "chocolate cake", "panini"],
   };
   
-  let restaurants = [restaurant1, restaurant2, restaurant3];
+  const restaurants = [restaurant1, restaurant2, restaurant3];
   
   /*
   DO NOT EDIT ANYTHING ABOVE THIS LINE
@@ -59,13 +59,34 @@ let restaurant1 = {
     applicationVersion: "1.0",
     restaurants: restaurants,
     findAvailableRestaurants: function (numberOfPeople) {
-      // Complete here
+      const filteredList = restaurants.filter((restaurant) => {
+        const availability = restaurant.totalSeats - restaurant.numberOfCustomers;
+          return availability >= numberOfPeople;
+        });
+      const availableRestaurants = filteredList.map((restaurant) => {
+        return restaurant.name;
+      });
+      return availableRestaurants;
+    
     },
+    
     findRestaurantServingDish: function (dishName) {
-      // Complete here
+      const restaurantServingDish = restaurants.filter((restaurant)=>{
+       return restaurant.menu.includes(dishName);
+      }).map((restaurant)=>{
+        return restaurant.name;
+      })
+      return restaurantServingDish;
     },
+    
+    
+    
     countNumberOfRestaurantsInArea: function (area) {
-      // Complete here
+      const countNumberOfRestaurantsInArea= restaurants.filter((restaurant)=>{
+        return restaurant.address.area === area;
+      })
+      return countNumberOfRestaurantsInArea.length
+    //   Complete here
     },
   };
   
