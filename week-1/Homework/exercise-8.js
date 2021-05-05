@@ -101,3 +101,106 @@ var mentors = [
 
 //YOUR CODE HERE
 
+//*******FIRST TASK*******/
+
+// function serch() {
+//   mentors.forEach(mentor=>{
+//     if(mentor.job.city==="Barcelona" && mentor.skills.includes('React')){
+// console.log(`Hi, my name is ${mentor.firstName} ${mentor.lastName}. I work in Barcelona and i know React.`)
+//     }
+//   })
+// }
+// serch()
+
+// //*******SECOND TASK*******/
+
+// function setAttribute() {
+//   mentors.forEach(mentor=>{
+//     if(mentor.job.city==="Barcelona"){
+//     mentor.class="Jun1"
+//     mentor.skills.push("SQL")
+//     }
+//   })
+// }
+// setAttribute()
+// console.log(mentors)//Se ve como se agregaron skills a los que viven en Barcelona y cambia class
+
+//*******THIRD TASK*******/
+
+// function addSkillMethod() {
+//   mentors.forEach(mentor=>{
+//     mentor.addSkill = function addSkills(skill) {
+//       this.skills.push(...skill)//Utilizo 3 puntos para agregar varios skills en uno solo 
+//     }
+//   })
+// }
+// addSkillMethod()
+// // mentors[0].addSkill(['Photoshop','Css'])
+// console.log(mentors[0])// PARA COMPROBAR SI AGREGA EL SKILL 
+
+// //*******FOURTH TASK*******/
+
+// function addSk(mentors,newSkill){
+//   mentors.forEach(mentor=>{
+//   mentor.addSkill(newSkill)
+//   })
+
+// }
+// addSk(mentors,['Ajedrez'])// El nuevo skill se agrega entrecorchetes porque utilice en el metodo un spread por si son varios skills
+// console.log(mentors)
+
+//*******FIFTH TASK*******/
+// function removeSkill(skill) {
+//   mentors.forEach(mentor=>{
+//     if(mentor.skills.includes(skill)){
+//       i=(mentor.skills.indexOf(skill))//Declaro i para tener un indice de donde se encuentra el skill y poder removerlo
+//       mentor.skills.splice(i, 1); 
+//     }
+//   })
+  
+// }
+// removeSkill('React')
+// console.log(mentors)//PRUEBA
+
+//*******SIXTH TASK*******/
+// function mentorWithMoreSkills() {
+//   let numSkills= []
+//   mentors.forEach(mentor=>{
+//     numSkills.push(mentor.skills.length)
+//   })
+//   const moreSkill= Math.max(...numSkills)
+//   mentors.forEach(mentor=>{
+//     if(mentor.skills.length===moreSkill){
+//     console.log(`${mentor.firstName} is the mentor with more skills`)
+//     }
+//   })
+// }
+// mentorWithMoreSkills()
+
+//*******SEVENTH TASK*******/
+
+function addStudentLikes() {
+  mentors.forEach(mentor=>{
+    mentor.addStudentLike = function addLikes(like) {
+      this.studentLikes+=like
+    }
+  })
+}
+addStudentLikes()
+// mentors[0].addStudentLike(1)//AGREGA EL LIKE SOLO AL QUE SE INDICA
+console.log(mentors)// PARA COMPROBAR SI AGREGA EL LIKE
+
+//*******EIGHTH TASK*******/
+
+function addStudentLik(mentors,like){
+  mentors.forEach(mentor=>{
+  mentor.addStudentLike(like)//LLAMA AL METODO FUNCION DE LA TAREA 7
+  })
+
+}
+addStudentLik(mentors,2)//AGREGA DOS LIKES A TODOS LOS MENTORES
+console.log(mentors)//PARA COMPROBAR SI AUMENTA
+
+
+
+
