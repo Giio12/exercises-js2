@@ -15,6 +15,12 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+  
+  people.forEach(persona=>{
+  content.innerHTML+=`<h1>${persona.name}</h1>`
+  content.innerHTML+=`<h2>${persona.job}</h2>`
+})
+
 }
 
 /**
@@ -26,6 +32,12 @@ function exerciseOne(arrayOfPeople) {
  */
 function exerciseTwo(shopping) {
   //Write your code in here
+  content.innerHTML+=`<ul>`
+  shopping.forEach(lista=>{
+    content.innerHTML+=`<li>${lista}</li>`
+  })
+  content.innerHTML+=`</ul>`
+    
 }
 
 /**
@@ -58,8 +70,23 @@ function exerciseTwo(shopping) {
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
 function exerciseThree(books) {
-  //Write your code in here
+  content.innerHTML+=`<h1>Books</h1>`
+  content.innerHTML+='<ul>'
+  books.forEach((book,i)=>{
+    const backgroundColor = book.alreadyRead ? 'green' : 'red';
+    content.innerHTML+=`<li style="background-color:${backgroundColor};
+    margin:100px;
+    padding:15px">
+    <p>${book.title} - ${book.author} </p>
+    <img src=${images[i]}>
+    </li>`
+  })
+  content.innerHTML+='</ul>'
 }
+    let img1= "https://m.media-amazon.com/images/I/416Hql52NCL.jpg width=300px"
+    let img2= "https://images-na.ssl-images-amazon.com/images/I/71HMyqG6MRL.jpg width=300px"
+    let img3= "https://images-na.ssl-images-amazon.com/images/I/41as+WafrFL._SX258_BO1,204,203,200_.jpg width=300px"
+    const images=[img1,img2,img3]
 
 //
 //

@@ -37,7 +37,7 @@ orangeButton.addEventListener('click',buttonOrange)
 function buttonGreen(event){
     event.preventDefault()
     
-    // const jumb= document.querySelector('.jumbotron')
+    // const jumb= document.querySelector('.jumbotron')//Otra opcion que es válida
     const jumb= document.getElementsByClassName('jumbotron')
     jumb[0].style.backgroundColor ='#87ca8a'
     const button1= document.querySelector('a[class="btn btn-primary btn-lrg"]')//una clase dentro de un atributo
