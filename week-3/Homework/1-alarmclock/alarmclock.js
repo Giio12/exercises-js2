@@ -9,23 +9,45 @@ function secondsToHms(d) {
 
 
 function setAlarm() {
-  const time=document.getElementById('timeRemaining')
-  const valor=document.getElementById('alarmSet')
-  let n = valor.value
+  const time = document.getElementById('timeRemaining')
+  const horas = document.getElementById('alarmSet')
+  const minutos = document.getElementById('alarmSet1')
+  const segundos = document.getElementById('alarmSet2')
+  let hour=horas.value*3600
+  let min = minutos.value*60
+  let seg = hour+ min + parseInt(segundos.value)  //Aqui tengo el error no suma
+  
   const interval = setInterval(function(){
 
-  time.innerHTML=`Time Remaining: ${secondsToHms(n)}`;
+  time.innerHTML=`Time Remaining: ${secondsToHms(seg)}`;
 
-  if (n == 0) {
+  if (seg == 0) {
     clearInterval(interval);
     playAlarm();
-  }
-  n--;
+    const body= document.querySelector('body')
+    body.style.backgroundColor ='#87ca8a'
+  //   body.innerHTML+=`<img src=https://lh3.googleusercontent.com/proxy/rISTKIxw8lGY9nsvjAC3dFd37_dJrzL5-AJi_E6h0SrRQfW0uUldCsB-0AGm_l6WmrITYkCz0bINQHXwdRexwUIiEYzcRa_FxMq8c4qkIOuyVXULAtAVvYmrgWF1uyqhdKcI22SUyjyhplfEaFrAGgOsWWrByRcCZ7Zf7RGKZw>`
+   }
+  seg--;
 
- },1000);
- 
+},1000);
+function  restartAlarm() {
+  const body= document.querySelector('body')
+  const time = document.getElementById('timeRemaining')
+  const horas = document.getElementById('alarmSet')
+  const minutos = document.getElementById('alarmSet1')
+  const segundos = document.getElementById('alarmSet2')
+  clearInterval(interval);
+  time.innerHTML=`Time Remaining:00:00:00`
+  horas.value=("")
+  minutos.value=("")
+  segundos.value=("")
+  body.style.backgroundColor ='white'
+  
 }
-
+const botonRestart= document.getElementById('restart')
+botonRestart.addEventListener("click",restartAlarm)
+}
 
 
 
@@ -41,6 +63,7 @@ function setup() {
   document.getElementById("stop").addEventListener("click", () => {
     pauseAlarm();
   });
+  
 }
 
 function playAlarm() {
