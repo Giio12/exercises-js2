@@ -69,19 +69,21 @@ function exerciseTwo(shopping) {
 
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
+
 function exerciseThree(books) {
   content.innerHTML+=`<h1>Books</h1>`
-  content.innerHTML+='<ul>'
-  books.forEach((book,i)=>{
+  let books1=""
+    books.forEach((book,i)=>{
     const backgroundColor = book.alreadyRead ? 'green' : 'red';
-    content.innerHTML+=`<li style="background-color:${backgroundColor};
+    books1+=`<li style="background-color:${backgroundColor};
     margin:100px;
     padding:15px">
     <p>${book.title} - ${book.author} </p>
     <img src=${images[i]}>
     </li>`
   })
-  content.innerHTML+='</ul>'
+  content.innerHTML+=`<ul>${books1} </ul>`
+  
 }
     let img1= "https://m.media-amazon.com/images/I/416Hql52NCL.jpg width=300px"
     let img2= "https://images-na.ssl-images-amazon.com/images/I/71HMyqG6MRL.jpg width=300px"
