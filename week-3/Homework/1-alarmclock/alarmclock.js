@@ -15,7 +15,7 @@ function setAlarm() {
   const segundos = document.getElementById('alarmSet2')
   let hour=horas.value*3600
   let min = minutos.value*60
-  let seg = hour+ min + parseInt(segundos.value)  //Aqui tengo el error no suma
+  let seg = hour+ min + parseInt(segundos.value)  
   
   const interval = setInterval(function(){
 
