@@ -1,1 +1,16 @@
-/** Write your CSS in here **/
+.carousel {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+}
+#imagen {
+    width: 30%;
+    height: 400px;
+    background-size: cover;
+  
+}
+.controles {
+    max-width: 630px;
+    margin: 0 auto;
+    display: flex;
+}
